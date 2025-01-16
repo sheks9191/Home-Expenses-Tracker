@@ -15,8 +15,7 @@ import { toast } from "react-toastify";
         }
     })
      toast.success('Account Updated Successfully')
-    //  console.log(response.data)
-    store.dispatch(loginUser(response.data))
+     store.dispatch(loginUser(response.data))
     
    } catch (error) {
      const errorMsg = error?.response?.data?.msg || 'Check Your Details'

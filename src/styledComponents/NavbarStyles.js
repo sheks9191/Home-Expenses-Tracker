@@ -12,7 +12,7 @@ export const NavbarWrapper = styled.div`
     align-items:center;
     justify-content:space-between;
     height:5rem;
-    /* background-color:red; */
+    
 }
 
 .menu-container {
@@ -23,18 +23,22 @@ export const NavbarWrapper = styled.div`
  cursor: pointer;
 }
 
- .menu{
-        width:4px;
-        height:4px;
-        border-radius:50%;
-        background:var(--white);
-        margin:2px;
-        
-    }
 
 .logo-content {
     display:flex;
     align-items:center;
+}
+
+.menu-btn,.reload-btn{
+    background:transparent;
+    cursor: pointer;
+    color:var(--custom-100);
+    font-size:1.4rem;
+    border:0;
+}
+
+.menu-btn{
+    display:none;
 }
 
 .logo-container {
@@ -91,16 +95,37 @@ width:100%;
     box-shadow:var(--shadow-4);
     cursor: pointer;
     position:relative;
-
+    
     span {
-        text-transform:uppercase;
-        font-weight:600;
+        font-weight:400;
+        font-size:0.9rem;
     }
+}
+
+.profile-link {
+  position:absolute; 
+  top:3rem;
+  left:0;
+  display:flex;
+  width:100%;
+  height:1.6rem;
+  letter-spacing:1px;  
+  background:var(--tertiary-100); 
+  text-align:center; 
+  top:2rem; 
+  z-index: 100;
+  box-shadow:var(--shadow-4);
+  border-radius:3px;
+  color:var(--secondary-100);
+  font-size:0.85rem;
+  align-items:center;
+  justify-content:center;
 }
 
 .logout-btn {
     position:absolute;
-    top:3rem;
+    top:4rem;
+    left:0;
     display:block;
     width:100%;
     height:1.6rem;
@@ -112,6 +137,64 @@ width:100%;
     color:var(--secondary-100);
     z-index: 100;
     box-shadow:var(--shadow-4);
+}
+
+.sm-screen{
+    display:none;
+}
+
+
+@media (max-width:990px){
+    .menu-btn{
+    display:${({$toggle}) => $toggle ? 'none':'flex'};
+}
+
+.reload-btn{
+    display:none;
+}
+
+.logo-container{
+    display:none;
+}
+
+.user {
+     display:none;
+}
+
+.sm-screen{
+    display:flex;
+    text-transform:uppercase;
+    background:var(--tertiary-100);
+    color:var(--secondary-100);
+    width:1.8rem;
+    height:1.8rem;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:50%;
+    font-size:0.9rem;
+    cursor: pointer;
+    position:relative;
+}
+
+.sm-screen{
+    .profile-link,.logout-btn{
+        width:auto;
+        left:auto;
+        width:5rem;
+        text-transform:capitalize;
+
+    }
+
+   
+}
+
+.nav-center{
+    .name {
+    display:none;
+}
+
+}
 }
 
 

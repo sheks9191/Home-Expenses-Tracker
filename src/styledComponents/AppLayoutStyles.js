@@ -19,6 +19,18 @@ padding:0 3rem;
 
 }
 
+.outlet-content {
+  /* display:none; */
+  /* width:80vw; */
+
+  
+}
+
+@media (max-width:990px){
+   .app-layout{
+    grid-template-columns:1fr;
+   }
+}
 
 
 `

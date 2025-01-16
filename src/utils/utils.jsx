@@ -1,10 +1,12 @@
 import { FaMoneyBillWave,FaRegChartBar } from "react-icons/fa";
-import { GiExpense, GiTakeMyMoney  } from "react-icons/gi";
+import { GiExpense} from "react-icons/gi";
 import { IoMdSettings } from "react-icons/io";
+import {GiTakeMyMoney  } from "react-icons/gi";
 import { MdSummarize } from "react-icons/md";
 import { nanoid } from "nanoid";
 import axios from "axios";
 import { useSelector } from "react-redux";
+// import { getUserFromLS } from "../features/ui/uiSlice";
 
 
 const appUrl = 'http://localhost:3000/api/v2';
@@ -12,6 +14,20 @@ const appUrl = 'http://localhost:3000/api/v2';
 export const customAPI = axios.create({
   baseURL:appUrl,
 })
+
+// export const customAPI = axios.create({
+//   baseURL: appUrl
+// });
+
+// customAPI.interceptors.request.use((config) => {
+//   const user = getUserFromLS();
+  
+//   if (user) {
+//     config.headers['Authorization'] = `Bearer ${user.loginUserToken}`;
+//   }
+//   return config;
+// });
+
 export const pageIcons = [
     {
       id:nanoid(),
@@ -232,6 +248,58 @@ export const currencyList = [
 
 ]
 
+export const BudgetMonths = [
+  {
+    id:nanoid(),
+    month:'January',
+  },
+   {
+    id:nanoid(),
+    month:'February',
+  },
+   {
+    id:nanoid(),
+    month:'March',
+  },
+   {
+    id:nanoid(),
+    month:'April',
+  },
+   {
+    id:nanoid(),
+    month:'May',
+  },
+   {
+    id:nanoid(),
+    month:'June',
+  },
+   {
+    id:nanoid(),
+    month:'July',
+  },
+   {
+    id:nanoid(),
+    month:'August',
+  },
+   {
+    id:nanoid(),
+    month:'September',
+  },
+   {
+    id:nanoid(),
+    month:'October',
+  },
+   {
+    id:nanoid(),
+    month:'November',
+  },
+  {
+    id:nanoid(),
+    month:'December',
+  },
+
+]
+
 
 export const currencyUpdate = (price) => {
 
@@ -245,3 +313,6 @@ const [symbol,currency] = currencyValue.split(' ')
  
   return currencyUnit
 }
+
+
+

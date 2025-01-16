@@ -1,9 +1,9 @@
 import { MdOutlineAccessTime,MdDelete } from "react-icons/md";
 import { FaEdit } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Form, Link } from "react-router-dom";
 import { currencyUpdate } from "../utils/utils";
 
-const ItemComponent = ({itemType,itemAmount,date,itemID,handleDelete,isLoading,item,itemInitial}) => {
+const ItemComponent = ({itemType,itemAmount,date,itemID,item,itemInitial}) => {
   const amount = currencyUpdate(itemAmount)
   return (
      <div className="item-component">
@@ -14,7 +14,9 @@ const ItemComponent = ({itemType,itemAmount,date,itemID,handleDelete,isLoading,i
          <p className="date"><MdOutlineAccessTime className="icon"/>{date}</p>
          <p className="amount">{amount}</p>
          <div className="item-btn">
-            <button className="btn-delete" onClick={handleDelete} disabled={isLoading}><MdDelete/></button>
+          <Form method="POST" action={`../delete-${item}/${itemID}`} className="delete-icon">
+              <button type="submit" className="btn-delete"><MdDelete/></button>
+          </Form> 
             <Link to={`${item}/${itemID}`}><button type="button" className="btn-edit"><FaEdit/></button></Link>
          </div>
       </section>

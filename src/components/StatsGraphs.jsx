@@ -7,11 +7,13 @@ import { FaCaretDown, FaCaretUp } from "react-icons/fa";
 import BarCharts from "./BarCharts";
 
 const StatsGraphs = () => {
-const {incomeStats,expenseStats} = useLoaderData()
+let {incomeStats,expenseStats} = useLoaderData()
 const { toggleStatsTitle,toggleStatsChart} = useSelector(store => store.ui)
 const dispatch = useDispatch()
-
  
+   incomeStats = incomeStats.sort((a,b) => new Date(a.currentDate) - new Date(b.currentDate)).slice(-10)
+   expenseStats = expenseStats.sort((a,b) => new Date(a.currentDate) - new Date(b.currentDate)).slice(-10)
+  
 
   return (
     <div>

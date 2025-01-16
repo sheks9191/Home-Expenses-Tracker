@@ -2,13 +2,21 @@ import styled from "styled-components";
 
 
 export const SidebarWrapper = styled.div ` 
-overflow-y:scroll;
+
 height:calc(100vh - 5rem);
 font-family: "Poppins", sans-serif;
 font-weight: 400;
 font-style: normal;
 letter-spacing:1px;
 width:20vw;
+ 
+  .sidebar-component{
+   overflow-y:scroll;
+   width:100%;
+   height:100%;
+   max-width:250px;
+   
+   }
 
 .app-time{
   position: relative;
@@ -44,13 +52,11 @@ width:20vw;
     display:flex;
     flex-direction:column;
     row-gap:1rem;
-
-    
 }
 
 .link-items{
     position: relative;
-    width:80%;
+    width:70%;
 }
 
   .link-items-btn{
@@ -142,7 +148,64 @@ width:20vw;
       
 }
 
+.logout, .close-btn {
+    display:none;
+}
 
 
+
+
+@media (max-width:990px){
+   display:${({$toggle}) => $toggle ? 'flex':'none'};
+   position:fixed;
+   background:rgba(0,0,0,0.5);
+   transition:all 0.5s ease-in-out;
+   top:0;
+   left:0;
+   width:100vw;
+   z-index:10;
+   min-height:100vh;
+
+   .sidebar-component{
+   padding:5rem 0 0 1rem;
+   background:var(--secondary-100);
+   width:40%;
+   min-width:300px;
+   height:100%;
+ 
+   
+   }
+   
+   .sidebar-content{
+    margin-top:3rem;
+    margin-bottom:6.5rem;
+    
+   }
+
+.close-btn {
+    display:block;
+    position:absolute;
+    top:1.5rem;;
+    right:2rem;
+    background:transparent;
+    border:0;
+    color:var(--white);
+    font-size:1.7rem;
+    cursor: pointer;
+}
+
+.logout {
+    display:block;
+    display:flex;
+    align-items:center;
+    cursor: pointer;
+    font-size:0.8rem;
+}
+
+.logout-icon {
+    margin-right:1rem;
+    font-size:1.5rem;
+}
+}
 
 `

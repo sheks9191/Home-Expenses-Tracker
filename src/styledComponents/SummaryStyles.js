@@ -44,8 +44,10 @@ export const SummaryWrapper = styled.div`
    background:var(--secondary-100);
    top:0;
    right:0;
-   width:25px;
-   height:25px;
+   min-width:25px;
+   min-height:25px;
+   font-size:0.8rem;
+   padding:2px;
    transform: translateY(-16px);
 }
 

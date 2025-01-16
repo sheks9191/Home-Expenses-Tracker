@@ -12,13 +12,6 @@ const LineCharts = ({data,color}) => {
     </div>
      )
   }
-  
- 
-//  data = data.map(item=> {
-//     const {totalAmount,count,date} = item
-//     const formatDate = moment(date).format('MMM Do')
-//     return {totalAmount, count, date:formatDate}
-//   })
 
   return (
     

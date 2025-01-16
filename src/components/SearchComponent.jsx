@@ -12,7 +12,7 @@ const SearchComponent = () => {
          onChange(form)
       }, 1000)   
     }
-   }
+   }   
   return (
    
         <Form className="form-search">

@@ -70,26 +70,15 @@ export const GraphWrapper = styled.div `
         padding:0 5px;
         
     }
-    .bal {
-        top: 0;
-        right:0;
-        transform:translateX(0px);
-       
-         display:grid;
-        align-self:flex-start;
-         padding:0 5px;
-    }
+}
 
-    .negative{
+  .negative{
         color:red !important;
-        border-right:5px solid red;
     }
 
      .positive{
         color:green !important;
-        border-right:5px solid green;
     }
-}
 
 .stats-title{
     display:flex;
@@ -110,8 +99,7 @@ export const GraphWrapper = styled.div `
         letter-spacing:1px;
         color:greenyellow; 
         transition:var(--transition);  
-        position:relative;
-       
+        position:relative; 
         width:100px;
 }
 

@@ -12,8 +12,6 @@ export const loader =(store) => async ({request}) => {
   
   const params = Object.fromEntries([...searchParam]);
 
-  // console.log(param)
-
     const response = await customAPI.get(expenseUrl,{
       params,
       headers:{
@@ -32,10 +30,14 @@ const Expenses = () => {
   
   return (
     <ItemWrapper>
+      
       <SearchComponent/>
+      <div className="item-header">
       <h5>Total: <span className="items-count">{totalExpenses}</span> Expense{totalExpenses > 1 &&'s'}</h5>
-      <ExpensesComponent/>
       {noOfPages > 1 && <PaginationComponent/>}
+      </div>
+      <ExpensesComponent/>
+      
     </ItemWrapper>
   )
 }

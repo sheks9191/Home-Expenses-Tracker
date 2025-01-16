@@ -2,14 +2,25 @@ import styled from "styled-components";
 
 
 export const ItemWrapper = styled.div`
+.item-header {
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    margin:0 0 2rem 0;
 
+    h5{
+        margin:0;
+        padding-top:1rem;
+    }
+}
 .items-component {
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
     gap:1rem;
+    margin-bottom:3rem;
 }
 .item-component{
-    /* border:2px solid red; */
     position:relative;
     background:var(--white);
     padding:0.3rem 0.5rem;
@@ -69,8 +80,14 @@ export const ItemWrapper = styled.div`
     position:absolute;
     right:0;
     bottom:0.1rem;
+    display:flex;
+    
 } 
 
+.delete-icon {
+    display:flex;
+    align-items:center;
+}
 .btn-delete,.btn-edit {
     margin-right:5px;
     cursor: pointer;
@@ -111,14 +128,15 @@ export const ItemWrapper = styled.div`
     letter-spacing:1px;
     background:transparent;
     border:0;
-    border-bottom:2px solid var(--tertiary-100);
+    border-bottom:0.3px solid var(--tertiary-100);
     color:var(--custom-100);
-    border-radius:15px;
+    /* border-radius:15px; */
 
    }
 
    input:focus{
     outline:0;
+     border-bottom:2px solid var(--tertiary-100);
    }
 }
 

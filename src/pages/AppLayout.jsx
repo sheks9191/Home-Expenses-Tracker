@@ -11,7 +11,8 @@ const AppLayout = () => {
       <Navbar/>
       <section className="app-layout">
        <Sidebar/>
-      {pageLoading ? <Loading/>: <Outlet/> }
+         {pageLoading ? <Loading/>: <Outlet/> }
+       
       </section>
       
     </LayoutWrapper>

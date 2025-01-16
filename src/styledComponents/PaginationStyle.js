@@ -2,15 +2,12 @@ import styled from "styled-components";
 
 
 export const PaginationWrapper = styled.div ` 
-  
- 
-  margin:4rem 0 2rem 0;
   display:flex;
   align-items:center;
-  justify-content:end;
-  flex-wrap:wrap;
-  column-gap:0.8rem;
-  
+  justify-content:center;
+  column-gap:0.5rem;
+  padding-top:1rem;
+
   .btn {
     display:flex;
     place-items:center;

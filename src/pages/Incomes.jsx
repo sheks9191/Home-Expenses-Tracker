@@ -25,6 +25,7 @@ export const loader = (store) => async ({request}) => {
 
 
 
+
 const Income = () => {
 
  const {totalIncomes,noOfPages} = useLoaderData();
@@ -33,9 +34,11 @@ const Income = () => {
    
     <ItemWrapper>
       <SearchComponent/>
-      <h5>Total: <span className="items-count">{totalIncomes}</span> Income{totalIncomes > 1 &&'s'}</h5>
+      <div className="item-header">
+        <h5>Total: <span className="items-count">{totalIncomes}</span> Income{totalIncomes > 1 &&'s'}</h5>
+         {noOfPages > 1 && <PaginationComponent/>}
+      </div> 
       <IncomesComponent/>
-      {noOfPages > 1 && <PaginationComponent/>}
     </ItemWrapper>
   )
 }

@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { toast } from "react-toastify";
 
-const getUserFromLS = () => JSON.parse(localStorage.getItem('loginUser')) || null;
+export const getUserFromLS = () => JSON.parse(localStorage.getItem('loginUser')) || null;
 const getCurrencyFromLS = () =>localStorage.getItem('unit')||'en-NG NGN' 
 
 const defaultState = {
@@ -12,6 +12,7 @@ const defaultState = {
     inputTextId: '' ,
     toggleStatsTitle:false,
     toggleStatsChart:false,
+    toggleMenu:false,
     currencyValue:getCurrencyFromLS()
 }
 
@@ -65,6 +66,10 @@ const uiSlice = createSlice({
           state.toggleStatsChart = !state.toggleStatsChart
         } ,
 
+            setToggleMenu:(state) => {
+          state.toggleMenu = !state.toggleMenu
+        } ,
+
         setCurrencyValue:(state,{payload}) => {
             localStorage.setItem('unit',payload)
             state.currencyValue = payload
@@ -77,5 +82,5 @@ const uiSlice = createSlice({
 
 
 
-export const {loginUser,logoutUser,setToggleLogout,setToggleLinkIncomeItems,setToggleLinkExpenseItems,setNavText,setPageIconId,setInputTextId,setToggleStatsTitle,setToggleStatsChart,setCurrencyValue} = uiSlice.actions
+export const {loginUser,logoutUser,setToggleLogout,setToggleLinkIncomeItems,setToggleLinkExpenseItems,setNavText,setPageIconId,setInputTextId,setToggleStatsTitle,setToggleStatsChart,setToggleMenu,setCurrencyValue} = uiSlice.actions
 export default uiSlice.reducer;

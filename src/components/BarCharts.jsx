@@ -1,7 +1,7 @@
-import moment from 'moment';
+import { currencyUpdate } from '../utils/utils';
 import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid,ResponsiveContainer  } from 'recharts';
 
-const colors = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', 'red', 'pink'];
+const colors = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', 'red', '#D9DDDC','#FCF4A3',' #FFFDD0','#F81894','#C7EA46'];
 
 const getPath = (x, y, width, height) => {
   return `M${x},${y + height}C${x + width / 3},${y + height} ${x + width / 2},${y + height / 3}
@@ -17,6 +17,11 @@ const TriangleBar = (props) => {
 };
 
 const BarCharts = ({data}) => {
+ data = data.map(item => {
+  item.totalAmount =Math.round(item.totalAmount)
+  return item
+ })
+  console.log(data);
 
    if(data.length === 0){
     
@@ -26,12 +31,6 @@ const BarCharts = ({data}) => {
     </div>
      )
   }
-
-  //   data = data.map(item=> {
-  //   const {totalAmount,count,date} = item
-  //   const formatDate = moment(date).format('MMM Do')
-  //   return {totalAmount, count, date:formatDate}
-  // })
 
   return (
     
